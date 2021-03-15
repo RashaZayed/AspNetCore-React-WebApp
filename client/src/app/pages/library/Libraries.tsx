@@ -2,9 +2,6 @@ import { DetailsList, DetailsListLayoutMode, IColumn, Spinner, SpinnerSize } fro
 import { ApiClient, ILibraryDto } from 'app/generated/backend';
 import { IButtonProps, Icon, Image, initializeIcons, Nav, Text } from '@fluentui/react';
 import React, { useEffect, useState } from 'react';
-import Form from '../../components/Form';
-import { render } from 'react-dom';
-import { Router, RouteComponentProps, navigate } from '@reach/router';
 import { Link } from 'react-router-dom';
 
 const Libraries: React.FC = () => {
