@@ -1,9 +1,7 @@
 import React, { MouseEvent, useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
 import { ApiClient, LibraryDto } from 'app/generated/backend';
 
-import { Link } from 'react-router-dom';
+
 
 const Form: React.FC = () => {
     const [library, setLibrary] = useState({
@@ -26,7 +24,7 @@ const Form: React.FC = () => {
 
         const fetchData = async () => {
             try {
-                const result = await new ApiClient(process.env.REACT_APP_API_BASE).library_CreateLibrary(
+                await new ApiClient(process.env.REACT_APP_API_BASE).library_CreateLibrary(
                     LibraryDto.fromJS(library)
                 );
             } catch (e) {

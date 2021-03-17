@@ -1,10 +1,8 @@
-import { render, fireEvent, getByTestId } from '@testing-library/react';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Form from './Form';
 import Enzyme from "enzyme";
 import Adapter from 'enzyme-adapter-react-16';
-import { shallow, mount ,configure } from 'enzyme';
+import { shallow,configure } from 'enzyme';
 
 configure({ adapter: new Adapter() });
 

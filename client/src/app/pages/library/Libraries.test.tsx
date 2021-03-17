@@ -1,6 +1,4 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-
 import Libraries from './Libraries';
 import Adapter from 'enzyme-adapter-react-16';
 import { shallow, configure } from 'enzyme';
@@ -13,6 +11,7 @@ describe('<Libraries />', () => {
     it('renders without crashing', () => {
         shallow(<Libraries />);
     });
+
     //check displaying one list
     it(' displaying one list', () => {
         const wrapper = shallow(<Libraries/>);
