@@ -1,5 +1,7 @@
 import React, { MouseEvent, useState } from 'react';
-import { ApiClient, ILibraryDto, LibraryDto } from 'app/generated/backend';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import { ApiClient, LibraryDto } from 'app/generated/backend';
 
 import { Link } from 'react-router-dom';
 
@@ -43,6 +45,8 @@ const Form: React.FC = () => {
             address_ZipCode: '',
             address_Country: ''
         });
+
+        window.location.href = '/libraries';
     };
     return (
         <>
@@ -55,6 +59,7 @@ const Form: React.FC = () => {
                     value={library.name}
                     onChange={onClickHandler}
                     placeholder="Name"
+                    data-testid="nameValue"
                     required
                 />
             </div>
@@ -67,7 +72,8 @@ const Form: React.FC = () => {
                     value={library.address_AddressLine1}
                     onChange={onClickHandler}
                     placeholder="Address line 1"
-                    required
+                    data-testid="address1Value"
+                   
                 />
             </div>
             <div className="form-floating mb-3">
@@ -79,6 +85,7 @@ const Form: React.FC = () => {
                     value={library.address_AddressLine2}
                     onChange={onClickHandler}
                     placeholder="Address line 2"
+                    data-testid="address2Value"
                 />
             </div>
             <div className="form-floating mb-3 ">
@@ -90,7 +97,7 @@ const Form: React.FC = () => {
                     value={library.address_City}
                     onChange={onClickHandler}
                     placeholder="City"
-                    required
+                    data-testid="cityValue"
                 />
             </div>
             <div className="form-floating mb-3">
@@ -102,7 +109,8 @@ const Form: React.FC = () => {
                     value={library.address_StateProvince}
                     onChange={onClickHandler}
                     placeholder="State"
-                    required
+                    data-testid="stateValue"
+                    
                 />
             </div>
 
@@ -115,7 +123,8 @@ const Form: React.FC = () => {
                     value={library.address_ZipCode}
                     onChange={onClickHandler}
                     placeholder="ZipCode"
-                    required
+                    data-testid="zipValue"
+                    
                 />
             </div>
             <div className="form-floating mb-3">
@@ -127,12 +136,13 @@ const Form: React.FC = () => {
                     value={library.address_Country}
                     onChange={onClickHandler}
                     placeholder="Country"
-                    required
+                    data-testid="countryValue"
+                    
                 />
             </div>
 
-            <button type="submit" className="btn btn-light" onClick={onSubmitHandler}>
-                <Link to="/libraries">Save</Link>
+            <button type="submit" className="btn btn-primary" onClick={onSubmitHandler}>
+                Save
             </button>
         </>
     );

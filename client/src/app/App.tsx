@@ -5,13 +5,13 @@ import About from 'app/pages/about/About';
 import Groups from 'app/pages/groups/Groups';
 import Home from 'app/pages/home/Home';
 import msftLogo from 'app/static/msftLogo.png';
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
 
 import * as serviceWorker from '../serviceWorker';
 import styles from './App.module.scss';
 import Libraries from './pages/library/Libraries';
-import Form from './components/Form';
+import Form from './pages/form/Form';
 
 initializeIcons();
 

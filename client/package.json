@@ -11,6 +11,8 @@
     },
     "dependencies": {
         "@fluentui/react": "7.155.3",
+        "@types/enzyme": "^3.10.8",
+        "@types/enzyme-adapter-react-16": "^1.0.6",
         "@uifabric/fluent-theme": "7.4.3",
         "camelcase": "6.2.0",
         "dotenv": "8.2.0",
@@ -119,6 +121,8 @@
         "babel-preset-react-app": "^10.0.0",
         "case-sensitive-paths-webpack-plugin": "2.3.0",
         "css-loader": "^5.0.1",
+        "enzyme": "^3.11.0",
+        "enzyme-adapter-react-16": "^1.15.6",
         "eslint": "^7.17.0",
         "eslint-config-react-app": "^6.0.0",
         "eslint-loader": "4.0.2",
