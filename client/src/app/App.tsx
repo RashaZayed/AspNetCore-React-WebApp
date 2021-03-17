@@ -10,6 +10,8 @@ import { BrowserRouter, Link, Route } from 'react-router-dom';
 
 import * as serviceWorker from '../serviceWorker';
 import styles from './App.module.scss';
+import Libraries from './pages/library/Libraries';
+import Form from './pages/form/Form';
 
 initializeIcons();
 
@@ -46,16 +48,24 @@ const App: React.FC = () => {
                                                 name: 'Groups',
                                                 url: '/groups',
                                                 key: 'groups'
+                                            },
+                                            {
+                                                name: 'Library',
+                                                url: '/libraries',
+                                                key: 'libraries'
                                             }
                                         ]
                                     }
                                 ]}
                             />
                         </div>
+
                         <div className="ms-Grid-col ms-sm12 ms-lg8 msxl-10">
                             <Route path="/" exact component={Home} />
                             <Route path="/about" component={About} />
                             <Route path="/groups" component={Groups} />
+                            <Route path="/libraries" component={Libraries} />
+                            <Route path="/library_form" component={Form} />
                         </div>
                     </div>
                 </div>
@@ -67,12 +77,14 @@ const App: React.FC = () => {
 // custom component to make react-router-dom Link component work in fabric Nav
 const onRenderLink = (props: IButtonProps) => {
     return (
-        <Link className={props.className} style={{ color: 'inherit', boxSizing: 'border-box' }} to={props.href}>
-            <span style={{ display: 'flex' }}>
-                {!!props.iconProps && <Icon style={{ margin: '0 4px' }} {...props.iconProps} />}
-                {props.children}
-            </span>
-        </Link>
+        <div>
+            <Link className={props.className} style={{ color: 'inherit', boxSizing: 'border-box' }} to={props.href}>
+                <span style={{ display: 'flex' }}>
+                    {!!props.iconProps && <Icon style={{ margin: '0 4px' }} {...props.iconProps} />}
+                    {props.children}
+                </span>
+            </Link>
+        </div>
     );
 };
 
